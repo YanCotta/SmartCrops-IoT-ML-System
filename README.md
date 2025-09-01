@@ -59,14 +59,58 @@ não por data leakage ou qualquer outro problema
 5.  **Importância das Features**: Análise com Random Forest revelando a dominância do tipo de cultura
 6.  **Inteligência de Negócios**: Recomendações estratégicas e roteiro de implementação
 
-## Excelência Acadêmica
 
-  - **Rigor Estatístico**: Validação de modelo e avaliação de desempenho adequadas
-  - **Integração com Negócios**: Tradução de descobertas técnicas para valor estratégico
-  - **Comunicação Profissional**: Relatório analítico claro e abrangente
-  - **Inovação**: Insights inovadores que desafiam abordagens tradicionais de otimização agrícola
+##  Hardware Setup & Firmware Deployment (Ir Além 1 & 2) - A Step-by-Step Changelog
 
-**Aluno**: Yan Pimentel Cotta (RM: 562836)
-**Instituição**: FIAP - Tecnólogo em IA/ML
-**Fase**: 5 (Primeiro Ano)
-**Data**: 22 de agosto de 2025
+This section documents the end-to-end process of setting up the physical IoT hardware, from initial troubleshooting to a fully functional data pipeline.
+
+### Part 1: Environment Setup & Troubleshooting
+
+The first challenge was to establish a stable connection between the development environment (Ubuntu/VS Code) and the ESP32 hardware, which had never been done before on this machine.
+
+**1. Initial Setup & Diagnosis**
+* **Action**: Installed VS Code, the PlatformIO extension, and necessary system drivers.
+* **Problem**: Upon connecting the ESP32, the OS did not recognize the device or assign a communication port. The PlatformIO device list was empty.
+* **Initial Hypotheses**: Suspected issues with USB cable, drivers, or user permissions.
+
+**2. Systematic Debugging**
+* **Action**: Followed a systematic troubleshooting process to isolate the issue.
+* **Steps Taken**:
+    * Confirmed the user was in the `dialout` and `tty` groups for correct permissions.
+    * Installed the PlatformIO `99-udev-rules` to ensure the Linux kernel could correctly identify the hardware.
+    * Used terminal commands like `lsusb` and `ls /dev/tty*` to diagnose the connection status at the hardware and OS levels.
+* **Key Finding**: The `ls /dev/tty*` command consistently showed that no communication port was being created, pointing to a physical layer issue.
+
+**3. The Breakthrough: Physical Layer Solution**
+* **Action**: After exhausting software solutions, the focus shifted to the physical hardware.
+* **Solution**: The faulty component was identified as a **"charge-only" micro-USB cable**. Replacing it with a proper **data-transfer cable** instantly solved the connection issue.
+* **Proof**: The `/dev/ttyACM0` port immediately appeared after connecting the ESP32 with the new cable.
+
+### Part 2: Firmware Deployment & Configuration
+
+With a stable connection, the next phase was to create and deploy the firmware.
+
+**4. Professional Project Structure**
+* **Action**: Created two distinct PlatformIO projects (`sensor-node` and `gateway-node`) and organized them within a VS Code Workspace.
+* **Best Practices Implemented**:
+    * **Secure Credentials**: Created a `.env` file to store Wi-Fi and Ubidots credentials securely, preventing them from being committed to Git.
+    * **Clean Repository**: Updated the root `.gitignore` file to exclude temporary build files (`.pio/`) and local settings (`.vscode/`, `.env`).
+
+**5. Obtaining Unique MAC Addresses**
+* **Action**: Created and uploaded a temporary `MAC_Finder` firmware to each ESP32 individually.
+* **Purpose**: To retrieve the unique hardware MAC address of each board, which is required for the ESP-NOW communication protocol.
+
+**6. Flashing the Final Firmware**
+* **Action**: Configured the main `sensor-node` and `gateway-node` firmware with the MAC address and credentials. Successfully compiled and uploaded the code to each respective board.
+
+### Part 3: Final Assembly & System Test (In Progress)
+
+This section will document the final build and live test of the complete system.
+
+**7. Circuit Assembly**
+* **Action**: The `sensor-node` was wired with DHT22 and soil moisture sensors. The `gateway-node` was wired with an LED and a buzzer for alerts.
+* **Verification**: Double-checked all connections against the provided schematics to ensure correctness.
+
+**8. Live Data Transmission & Verification**
+* **Action**: Powered on both nodes. The Sensor Node began collecting data and sending it to the Gateway via ESP-NOW. The Gateway successfully connected to Wi-Fi and began publishing the data to the Ubidots cloud platform via MQTT.
+* **Result**: The end-to-end data pipeline is fully operational.
