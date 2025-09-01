@@ -416,3 +416,10 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+#VS Code Workspace file
+*.code-workspace
+
+# PlatformIO
+.pio/
+.vscode/
