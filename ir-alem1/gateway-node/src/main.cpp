@@ -8,10 +8,10 @@
 #define BUZZER_PIN 5 // Buzzer for "Unhealthy" alert (from kit)
 
 // Wi-Fi and MQTT Config (replace placeholders)
-const char* ssid = "YourSSID";
-const char* password = "YourPass";
+const char* ssid = WIFI_SSID;
+const char* password = WIFI_PASSWORD;
 const char* mqtt_server = "industrial.api.ubidots.com";
-const char* mqtt_token = "YourUbidotsToken";  // From Ubidots account
+const char* mqtt_token = UBIDOTS_TOKEN;  // From Ubidots account
 const char* device_label = "/v1.6/devices/farmtech";  // Publish topic
 const char* alert_topic = "/v1.6/devices/farmtech/alerts";  // Subscribe for ML alerts
 
