@@ -2,9 +2,9 @@
 
 Um projeto de IoT-ML para agricultura inteligente: Nós duplos de ESP32 (sensor via ESP-NOW, gateway para MQTT/Ubidots) coletam dados de temperatura, umidade e umidade do solo. Um modelo de ML analisa o rendimento da safra e classifica a saúde da planta em tempo real. Código em Python, Notebooks e C++. Desenvolvido para a Fase 5 do primeiro ano do curso de tecnologia em IA/ML da FIAP. Contém ambos entregáveis mandatórios e ambos "Ir Aléns".
 
-## 🎯 Status das Entregas do Projeto
+## Status das Entregas do Projeto - 2/4 concluídas
 
-### ✅ Entrega 1 - CONCLUÍDA (Análise de Rendimento Agrícola)
+### Entrega 1 - CONCLUÍDA (Análise de Rendimento Agrícola)
 
 **Entregável**: `notebooks/entregavel_1.ipynb`
 
@@ -50,7 +50,7 @@ não por data leakage ou qualquer outro problema
 └── requirements.txt                # Dependências Python
 ```
 
-## 🔬 Metodologia de Análise
+## Metodologia de Análise
 
 1.  **Análise Exploratória de Dados (EDA)**: Análise estatística e visualização abrangente
 2.  **Análise de Clusterização**: Clusterização K-means com otimização pelo método do cotovelo
@@ -59,7 +59,7 @@ não por data leakage ou qualquer outro problema
 5.  **Importância das Features**: Análise com Random Forest revelando a dominância do tipo de cultura
 6.  **Inteligência de Negócios**: Recomendações estratégicas e roteiro de implementação
 
-## 🏆 Excelência Acadêmica
+## Excelência Acadêmica
 
   - **Rigor Estatístico**: Validação de modelo e avaliação de desempenho adequadas
   - **Integração com Negócios**: Tradução de descobertas técnicas para valor estratégico
