@@ -11,7 +11,7 @@ DHT dht(DHTPIN, DHTTYPE);
 #define LED_PIN 2         // LED for send status
 
 // Gateway MAC Address (replace with your Gateway ESP32's MAC from WiFi.macAddress())
-uint8_t gatewayMac[] = {0x24, 0x0A, 0xC4, 0xXX, 0xXX, 0xXX};  // Example: Use hex bytes
+uint8_t gatewayMac[] = {0x8C, 0x4F, 0x00, 0x27, 0xB3, 0xF0};  // Example: Use hex bytes
 
 // Structured Data for ESP-NOW (ensures type safety and easy parsing)
 typedef struct {
