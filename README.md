@@ -17,8 +17,14 @@
 
 Um sistema completo de IoT-ML para agricultura inteligente desenvolvido para a FIAP. O projeto integra análise de dados agrícolas, estimativas de custo em nuvem AWS, e implementação de hardware IoT com sensores ESP32. Inclui um sistema de Single Node funcional que coleta dados de umidade do solo via Wi-Fi/MQTT para Ubidots, pipeline completo de Machine Learning para classificação de saúde das plantas em tempo real, e análise preditiva de rendimento agrícola com 99,5% de precisão. Desenvolvido em Python, C++, e Jupyter Notebooks para a Fase 5 do curso de tecnologia em IA/ML da FIAP. **PROJETO COMPLETO** - Todas as entregas obrigatórias e "Ir Além" finalizadas com sucesso.
 
-Demonstração resumida dos entregáveis: https://youtu.be/cAOmK624HIo?si=W8WcEa0uOBUDvdx3
-Demonstração resumida dos "ir aléns": https://youtu.be/nWukH-vs7tY?si=k_Z8Da_Ewhno-BxI
+---
+
+-> Demonstração resumida dos entregáveis: https://youtu.be/cAOmK624HIo?si=W8WcEa0uOBUDvdx3
+
+-> Demonstração resumida dos "ir aléns": https://youtu.be/nWukH-vs7tY?si=k_Z8Da_Ewhno-BxI
+
+---
+
 ## Status das Entregas do Projeto 
 
 ### Entrega 1 - CONCLUÍDA (Análise de Rendimento Agrícola)
