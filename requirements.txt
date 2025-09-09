@@ -1,0 +1,6 @@
+paho-mqtt
+joblib
+pandas
+scikit-learn
+matplotlib
+seaborn
