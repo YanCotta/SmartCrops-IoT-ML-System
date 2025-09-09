@@ -12,11 +12,12 @@ A comparação entre as regiões **US East (Ohio)** e **South America (São Paul
 | **South America (São Paulo)** | **US$ 19,86** |
 
 *(Nota: Os custos são estimativas referentes a Agosto de 2025 e podem variar. Os detalhes completos da estimativa estão nos screenshots abaixo.)*
+
 **Screenshot da Estimativa Oficial da AWS:**
 ![Comparativo de custos para regiões da AWS](entregavel_2/aws_comparison_cost.png)
 
-**AWS Baseline Cost Screenshot:**
-![AWS Baseline Cost](entregavel_2/aws_baseline_cost.png)
+**Screenshot do Custo Base da AWS:**
+![Custo Base da AWS](entregavel_2/aws_baseline_cost.png)
 
 ---
 
@@ -34,42 +35,3 @@ Apesar da considerável vantagem de custo da região de Ohio, a escolha estraté
 
 **Conclusão:**
 Para uma aplicação de IoT e Machine Learning onde o desempenho em tempo real e a conformidade legal são primordiais, os benefícios da baixa latência e da soberania de dados superam em muito o custo operacional mais elevado. Portanto, **São Paulo é a região recomendada e necessária para esta implementação.**
-
-## ✅ Deliverable 2: AWS Cloud Cost Estimation - COMPLETED
-
-### Cost Comparison: US East (Ohio) vs. São Paulo (Brazil)
-
-For this analysis, we estimated the monthly cost to host the FarmTech Solutions API on a Linux server using the AWS Pricing Calculator. The required specifications were 2 vCPUs, 1 GiB of Memory, and 50 GB of general-purpose SSD storage, under an On-Demand pricing model.
-
-The comparison between the **US East (Ohio)** and **South America (São Paulo)** regions yielded the following results, as detailed in the official AWS estimate.
-
-| Region | Monthly Cost (USD) |
-| :--- | :--- |
-| **US East (Ohio)** | **$11.59** |
-| **South America (São Paulo)** | **$19.86** |
-
-*(Note: Costs are estimates as of August 2025 and may vary. Full estimate details are in the screenshots below.)*
-
-**Official AWS Estimate Screenshot:**
-**Screenshot da Estimativa Oficial da AWS:**
-![Comparativo de custos para regiões da AWS](entregavel_2/aws_comparison_cost.png)
-
-**AWS Baseline Cost Screenshot:**
-![AWS Baseline Cost](entregavel_2/aws_baseline_cost.png)
-
----
-
-### Justification and Final Choice
-
-**1. Cost Analysis:**
-The **US East (Ohio)** region is approximately **71% cheaper** than the São Paulo region for the same computing resources. From a purely financial perspective, the US-based server offers significant savings.
-
-**2. Technical and Legal Justification:**
-Despite the substantial cost advantage of the Ohio region, the correct strategic choice for FarmTech Solutions is to host the server in **São Paulo**. The justification is based on two critical, non-negotiable factors:
-
-* **Low Latency for IoT Data**: The system's effectiveness hinges on receiving and processing real-time data from sensors on a Brazilian farm. Hosting the API in São Paulo drastically reduces network latency, ensuring immediate data processing and timely alerts. The delay from connecting to a server in the US could render the real-time monitoring system ineffective.
-
-* **Data Sovereignty and LGPD Compliance**: Brazil's Lei Geral de Proteção de Dados (LGPD) imposes strict rules on data storage and processing. As agricultural production data can be considered sensitive and strategic, storing it outside of Brazil introduces significant legal and compliance risks. By choosing the São Paulo region, FarmTech Solutions guarantees adherence to local laws, protecting both the company and its clients.
-
-**Conclusion:**
-For a real-time IoT and ML application where performance and legal compliance are paramount, the benefits of low latency and data sovereignty far outweigh the higher operational cost. Therefore, **São Paulo is the recommended and required region for this deployment.**
