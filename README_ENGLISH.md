@@ -67,10 +67,10 @@ not due to data leakage or any other issue
 ├── data/
 │   └── crop_yield.csv              # Historical crop yield dataset (156 records)
 ├── docs/                           # Technical project documentation
-│   ├── implementation_plan.md      # Detailed implementation plan
-│   ├── RELATORIO.md               # Complete technical report
-│   ├── setup_of_esp32_and_sensors.md # Hardware setup guide
-│   └── upgrade_ideas.md           # Future improvement ideas
+│   └── dual-nodes-espnow-project/  # Initial architecture documentation
+│       ├── implementation_plan.md  # Detailed implementation plan
+│       ├── setup_of_esp32_and_sensors.md # Hardware setup guide
+│       └── upgrade_ideas.md        # Future improvement ideas
 ├── dual-nodes-espnow/              # Firmware for dual-node architecture (ESP-NOW)
 │   ├── gateway-node/              # Gateway node code (Wi-Fi/MQTT)
 │   └── sensor-node/               # Sensor node code (DHT + soil)
