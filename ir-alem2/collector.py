@@ -9,7 +9,7 @@ import joblib
 MQTT_BROKER = "industrial.api.ubidots.com"
 MQTT_PORT = 1883
 # IMPORTANT: Username is your Ubidots token, password can be empty
-MQTT_TOKEN = "BBUS-pxelSQLZlzitikOb88QjOCFrr6B8A6"
+MQTT_TOKEN = "UBITODS_TOKEN_HERE"  # Replace with your Ubidots token
 
 # Topics
 DEVICE_LABEL = "farmtech"
