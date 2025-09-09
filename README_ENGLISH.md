@@ -4,60 +4,68 @@
 
 [![FIAP - Faculty of Informatics and Administration Paulista](assets/logo-fiap.png)](https://www.fiap.com.br/)
 
-## 👨‍🎓 Team:
+## 👨‍🎓 Team Members: 
 - <a href="https://www.linkedin.com/in/yan-cotta/">Yan Cotta</a>
 
-## 👩‍🏫 Professors
-### Tutor
+## 👩‍🏫 Professors:
+### Tutor 
 - <a href="https://www.linkedin.com/in/lucas-gomes-moreira-15a8452a/">Lucas Moreira</a>
 ### Coordinator
 - <a href="https://www.linkedin.com/in/andregodoichiovato/">André Godoi</a>
 
 # SmartCrops-IoT-ML-System
 
-A complete IoT-ML system for smart agriculture developed for FIAP. The project integrates agricultural data analysis, AWS cloud cost estimates, and IoT hardware implementation with ESP32 sensors. Features a functional Single Node system that collects soil moisture data via Wi-Fi/MQTT to Ubidots, complete Machine Learning pipeline for real-time plant health classification, and predictive crop yield analysis with 99.5% accuracy. Developed in Python, C++, and Jupyter Notebooks for Phase 5 of FIAP's AI/ML technology course. **COMPLETE PROJECT** - All mandatory deliverables and "Go Beyond" successfully finished.
+A complete IoT-ML system for smart agriculture developed for FIAP. The project integrates agricultural data analysis, AWS cloud cost estimates, and IoT hardware implementation with ESP32 sensors. Includes a functional Single Node system that collects soil moisture data via Wi-Fi/MQTT to Ubidots, complete Machine Learning pipeline for real-time plant health classification, and predictive agricultural yield analysis with 99.5% accuracy. Developed in Python, C++, and Jupyter Notebooks for Phase 5 of FIAP's AI/ML technology course. **COMPLETE PROJECT** - All mandatory deliverables and "Go Beyond" successfully finished.
+
+---
+
+-> Brief demonstration of deliverables: https://youtu.be/cAOmK624HIo?si=W8WcEa0uOBUDvdx3
+
+-> Brief demonstration of "go beyond": https://youtu.be/nWukH-vs7tY?si=k_Z8Da_Ewhno-BxI
+
+---
 
 ## Project Deliverables Status
 
-### Deliverable 1 – COMPLETED (Agricultural Yield Analysis)
+### Deliverable 1 - COMPLETED (Agricultural Yield Analysis)
 
-**Artifact**: `entregavel_1/entregavel_1.ipynb`
+**Deliverable**: `entregavel_1/entregavel_1.ipynb`
 
 - Link to Deliverable 1 notebook: [entregavel_1/entregavel_1.ipynb](entregavel_1/entregavel_1.ipynb)
 - Dataset used: [data/crop_yield.csv](data/crop_yield.csv)
 
 **Summary of Achievements**:
 
-- **99.5% Predictive Accuracy** in crop yield modeling using a specific machine learning algorithm
-- **Paradigm-shifting discovery**: Crop selection is the dominant factor (96.9% importance) over environmental conditions
-- **Senior-level analysis** with comprehensive EDA, clustering, and comparison of 5 models
-- **Business transformation**: From environmental optimization to agricultural portfolio intelligence
+  - **99.5% Predictive Accuracy** in agricultural yield modeling using a specific machine learning algorithm
+  - **Paradigm-shifting discovery**: Crop selection is the dominant factor (96.9% importance) over environmental conditions 
+  - **Senior-level analysis** with comprehensive EDA, clustering and comparison of 5 models
+  - **Business transformation**: From environmental optimization to agricultural portfolio intelligence
 
 **Key Findings**:
 
-- **Dataset**: 156 high-quality records across 4 crop types (Cocoa, Oil Palm, Rice, Rubber)
-- **Yield Variation**: Extraordinary 40x variation (5,249 to 203,399 tons/hectare)
-- **Best Model**: Linear Regression (R² = 0.9950, RMSE = 4,394) -> high values due to dataset quality,
-not due to data leakage or any other issue
-- **Strategic Insight**: Choosing oil palm alone explains 96.9% of yield variation
+  - **Dataset**: 156 high-quality records of 4 crop types (Cocoa, Oil Palm, Rice, Rubber)
+  - **Yield Variation**: Extraordinary 40x variation (5,249 to 203,399 tons/hectare)
+  - **Best Model**: Linear Regression (R² = 0.9950, RMSE = 4,394) -> high values due to dataset quality,
+not data leakage or any other issue
+  - **Strategic Insight**: Oil palm fruit selection alone explains 96.9% of yield variation
 
 **Technical Excellence**:
 
-- Zero missing values, perfect data quality
-- Advanced clustering analysis revealing 3 distinct yield profiles
-- Comprehensive model evaluation (Linear, Decision Trees, Random Forest, SVR, KNN)
-- Professional visualizations and statistical rigor
+  - Zero missing values, perfect data quality
+  - Advanced clustering analysis revealing 3 distinct yield profiles
+  - Comprehensive model evaluation (Linear, Decision Trees, Random Forest, SVR, KNN)
+  - Professional visualizations and statistical rigor
 
 **Business Impact for FarmTech Solutions**:
 
-- Crop selection optimization tool with 99.5% accuracy
-- Potential ROI improvement up to 20x through strategic crop choice
-- Risk assessment framework based on yield cluster analysis
+  - Crop selection optimization tool with 99.5% accuracy
+  - Potential ROI improvement up to 20x through strategic crop choice
+  - Risk assessment framework based on yield cluster analysis
 
-#### Quick Artifacts & Navigation (Deliverable 1)
+#### Artifacts and Quick Navigation (Deliverable 1)
 
 - Final notebook: [entregavel_1/entregavel_1.ipynb](entregavel_1/entregavel_1.ipynb)
-- Dataset: [data/crop_yield.csv](data/crop_yield.csv)
+- Database: [data/crop_yield.csv](data/crop_yield.csv)
 - Python requirements: [requirements.txt](requirements.txt)
 
 
@@ -65,12 +73,12 @@ not due to data leakage or any other issue
 
 ```text
 ├── data/
-│   └── crop_yield.csv              # Historical crop yield dataset (156 records)
+│   └── crop_yield.csv              # Historical agricultural yield dataset (156 records)
 ├── docs/                           # Technical project documentation
 │   └── dual-nodes-espnow-project/  # Initial architecture documentation
 │       ├── implementation_plan.md  # Detailed implementation plan
-│       ├── setup_of_esp32_and_sensors.md # Hardware setup guide
-│       └── upgrade_ideas.md        # Future improvement ideas
+│       ├── setup_of_esp32_and_sensors.md # Hardware setup
+│       └── upgrade_ideas.md        # Ideas for future improvements
 ├── dual-nodes-espnow/              # Firmware for dual-node architecture (ESP-NOW)
 │   ├── gateway-node/              # Gateway node code (Wi-Fi/MQTT)
 │   └── sensor-node/               # Sensor node code (DHT + soil)
@@ -95,10 +103,10 @@ not due to data leakage or any other issue
 
 1. **Exploratory Data Analysis (EDA)**: Comprehensive statistical analysis and visualization
 2. **Clustering Analysis**: K-means clustering with elbow method optimization
-3. **Outlier Detection**: Isolation Forest for anomaly detection
+3. **Outlier Detection**: Isolation Forest for anomaly identification
 4. **Regression Modeling**: Comparison of 5 models with performance evaluation
-5. **Feature Importance**: Random Forest analysis revealing the dominance of crop type
-6. **Business Intelligence**: Strategic recommendations and implementation roadmap
+5.  **Feature Importance**: Random Forest analysis revealing crop type dominance
+6.  **Business Intelligence**: Strategic recommendations and implementation roadmap
 
 ## Deliverable 2 - COMPLETED (AWS Cost Estimation)
 
@@ -371,3 +379,4 @@ The final phase used live data to feed the Machine Learning model.
 - **Strategic Thinking**: Technical decisions grounded in business criteria
 
 **Developed by Yan Cotta for FIAP - Phase 5 of AI/ML Technology Course**
+
