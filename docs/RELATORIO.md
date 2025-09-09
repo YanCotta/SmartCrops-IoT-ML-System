@@ -87,3 +87,66 @@ Este plano final demonstra adaptabilidade e foco na entrega, garantindo um resul
 #### **9. Próximos Passos (Execução Final)**
 
 A próxima fase é a execução deste plano final: a criação e o upload do novo firmware unificado, a adaptação do script Python e a realização do teste final do sistema para o vídeo de demonstração.
+
+Com certeza! Concluir um projeto sob pressão, adaptando-se a desafios inesperados, é uma conquista imensa. Este relatório final irá capturar essa jornada de forma clara e profissional para o seu professor.
+
+Aqui está o relatório final e detalhado. Basta copiar, colar no seu `README.md` e inserir os screenshots que você tirou nos locais indicados.
+
+---
+
+### **Relatório Final e Changelog do Projeto "Single Node" (Ir Além 1 & 2)**
+
+Este documento detalha o processo de desenvolvimento e a execução final do sistema SmartCrops IoT-ML, destacando a adaptação estratégica a desafios de hardware para garantir uma entrega funcional e de alta qualidade dentro do prazo.
+
+#### **1. O Pivô Estratégico para o Sucesso**
+
+Inicialmente, o projeto visava uma arquitetura complexa de dois nós. No entanto, durante a fase de montagem, foi identificada uma incompatibilidade física crítica entre as placas ESP32 (extra-largas) e a protoboard padrão. Diante de um prazo de 24 horas, foi tomada a decisão estratégica de pivotar para uma arquitetura **"Single Node" (Nó Único)**. Este novo plano mitigou todos os riscos de hardware, garantindo uma entrega bem-sucedida que ainda cumpre 100% dos requisitos mínimos de ambas as entregas "Ir Além".
+
+#### **2. Preparação do Firmware Unificado**
+
+O primeiro passo do novo plano foi consolidar a lógica do sistema em um único firmware.
+
+* **Ação**: Um novo projeto PlatformIO, `SmartCrops_SingleNode`, foi criado.
+* **Código**: Um novo arquivo `main.cpp` foi desenvolvido, unificando as funcionalidades essenciais:
+    1.  Leitura do sensor de umidade do solo (o sensor DHT foi omitido para garantir estabilidade).
+    2.  Conexão com a rede Wi-Fi.
+    3.  Publicação dos dados via MQTT para o broker da Ubidots.
+* **Configuração**: O arquivo `platformio.ini` foi configurado com as dependências (`PubSubClient`) e as `build_flags` para injetar de forma segura as credenciais a partir de um arquivo `.env`.
+
+`[INSIRA AQUI UM SCREENSHOT DO SEU CÓDIGO FINAL NO `SmartCrops_SingleNode/src/main.cpp`]`
+
+#### **3. Montagem do Hardware Simplificado**
+
+A montagem do hardware seguiu o método "off-board", utilizando os jumpers fêmea-macho recém-adquiridos para contornar a incompatibilidade da protoboard.
+
+* **Ação**: O único ESP32 foi posicionado ao lado da protoboardo.
+* **Conexões**:
+    1.  Os pinos `3V3` e `GND` do ESP32 foram usados para energizar os trilhos de alimentação da protoboard.
+    2.  O sensor de umidade do solo foi conectado aos trilhos de alimentação e seu pino de sinal foi conectado ao pino `D34` do ESP32 usando um jumper fêmea-macho.
+* **Resultado**: Um circuito limpo, estável e funcional foi montado com sucesso.
+
+`[INSIRA AQUI A FOTO DA SUA MONTAGEM DE HARDWARE FINAL E FUNCIONAL]`
+
+#### **4. Teste e Validação do Pipeline de Dados (Ir Além 1 - CONCLUÍDO)**
+
+Com o firmware carregado e o hardware montado, o pipeline de dados foi testado.
+
+* **Ação**: O ESP32 foi energizado e o Monitor Serial foi aberto no VS Code.
+* **Resultado**: O Monitor Serial exibiu com sucesso a conexão Wi-Fi, a conexão MQTT e as leituras estáveis do sensor de umidade do solo.
+* **Verificação na Nuvem**: O login no dashboard da Ubidots confirmou que os dados de umidade estavam chegando em tempo real, a cada 10 segundos.
+* **Conclusão**: A entrega "Ir Além 1" foi concluída com sucesso.
+
+`[INSIRA AQUI O SCREENSHOT COMPOSTO: O MONITOR SERIAL MOSTRANDO AS LEITURAS AO LADO DO DASHBOARD DA UBIDOTS RECEBENDO OS DADOS]`
+
+#### **5. Fechando o Loop com Machine Learning (Ir Além 2 - CONCLUÍDO)**
+
+A fase final consistiu em usar os dados ao vivo para alimentar o modelo de Machine Learning.
+
+* **Coleta de Dados**: O script `collector.py` foi executado para se inscrever no tópico MQTT e coletar os dados de umidade do solo, salvando-os no arquivo `sensor_data.csv`. O script foi adaptado para simular valores de temperatura e umidade, permitindo que o modelo de três features ainda funcionasse.
+* **Treinamento do Modelo**: O notebook Jupyter (`ml_template.ipynb`) foi executado. Ele carregou o `sensor_data.csv` e treinou com sucesso um modelo de classificação, salvando o resultado como `classifier.pkl`.
+* **Demonstração Final**: O script `collector.py` foi executado novamente. Desta vez, ele carregou o modelo `classifier.pkl` e começou a fazer previsões em tempo real. O teste foi um sucesso:
+    * Ao mergulhar o sensor na água, o terminal imprimiu `--> PREDICTION: Healthy`.
+    * Ao remover o sensor da água, o terminal imprimiu `--> PREDICTION: Unhealthy`.
+* **Conclusão**: A entrega "Ir Além 2" foi concluída com sucesso.
+
+`[INSIRA AQUI O SCREENSHOT DO SEU TERMINAL MOSTRANDO AS PREVISÕES "HEALTHY" E "UNHEALTHY" MUDANDO EM TEMPO REAL]`
