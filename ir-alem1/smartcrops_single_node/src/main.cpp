@@ -62,6 +62,8 @@ void loop() {
 
   // Lê o sensor de umidade do solo
   int soil_raw = analogRead(SOIL_PIN);
+  Serial.print("Raw Sensor Value: ");
+  Serial.println(soil_raw);
   // Mapeia o valor para uma porcentagem (0-100%). Ajuste 4095 e 1000 com base na sua calibração!
   float soil_percentage = map(soil_raw, 4095, 1000, 0, 100);
 
